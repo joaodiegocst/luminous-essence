@@ -1,12 +1,17 @@
 .carrossel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .carrossel img {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carrossel-container {
+  display: flex;
+}
+
+.carrossel-container img {
+  flex: 0 0 auto;
+  width: 400px;
+  margin-right: 10px;
+  scroll-snap-align: center;
+}
