@@ -1,8 +1,24 @@
-<nav class="sidebar">
-  <ul>
-    <li><a routerLink="/">🏠 Home</a></li>
-    <li><a routerLink="/produtos">🛍️ Produtos</a></li>
-    <li><a routerLink="/ofertas">⭐ Ofertas</a></li>
-    <li><a routerLink="/contato">📞 Contato</a></li>
-  </ul>
-</nav>
+<!-- menu.component.html -->
+<span class="menu-icon" (click)="toggleMenu()">☰</span>
+
+<div class="overlay" *ngIf="isOpen" (click)="toggleMenu()"></div>
+
+<div class="sidebar" *ngIf="isOpen">
+  <!-- Header do menu -->
+  <div class="menu-header">
+    <div class="login-area">
+      <!-- Ícone antes do texto -->
+    <i class="fa fa-sign-in-alt login-icon"></i>
+      <span class="login-text">Entrar</span>
+    </div>
+    <!-- Botão de fechar alinhado à direita -->
+    <span class="close-btn" (click)="toggleMenu()">×</span>
+  </div>
+
+  <!-- Lista de navegação -->
+  <nav class="menu-list">
+    <a routerLink="/">Home</a>
+    <a routerLink="/shop">Shop</a>
+    <a routerLink="/contato">Contato</a>
+  </nav>
+</div>

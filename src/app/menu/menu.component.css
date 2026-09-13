@@ -1,0 +1,97 @@
+/* Ícone do menu */
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  color: #000000;
+  padding: 15px;
+}
+
+/* Sidebar ocupa toda a tela */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Overlay cobre toda a tela */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 999;
+}
+
+/* Header dentro da sidebar */
+.menu-header {
+  display: flex;
+  justify-content: space-between; /* Entrar à esquerda, fechar à direita */
+  align-items: center;
+  padding: 15px 20px;
+  height: 60px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Área de login */
+.login-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-icon {
+  font-size: 20px;
+  color: #111;
+}
+
+.login-text {
+  font-size: 18px;
+  color: #111;
+  font-weight: bold;
+}
+
+/* Botão de fechar alinhado à direita */
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  color: #000;
+  margin-left: auto;
+  font-weight: bold;
+}
+
+/* Lista de navegação */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px; /* espaço abaixo do header */
+  align-items: flex-start;
+}
+
+.menu-list li {
+  margin: 10px 0;
+}
+
+.menu-list a {
+  display: block;
+  padding: 12px 20px;
+  text-align: left;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;     
+  color: #111;         
+}
+
+.menu-list a:hover {
+  background-color: #f0f0f0;
+}
