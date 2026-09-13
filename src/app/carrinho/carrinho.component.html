@@ -1,1 +1,207 @@
-<p>carrinho works!</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho de Compras - Luminous Essence</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdfcf9;
+      color: #333;
+    }
+    header {
+      background: #d4a373;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-icon {
+      font-size: 24px;
+      cursor: pointer;
+      color: #000000;
+      padding: 15px;
+    }
+    .menu-icon:hover, .cart-icon:hover {
+      color: #b07d4f;
+    }
+    .logo {
+      height: 60px;
+    }
+
+    /* Estilos do carrinho */
+    h1.carrinho-title {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 15px;
+      margin: 15px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 800px;
+    }
+    .item-img {
+      width: 80px;
+      border-radius: 5px;
+    }
+    .item-info {
+      flex: 1;
+      margin-left: 15px;
+      text-align: left;
+    }
+    .item-qty {
+      width: 50px;
+      margin-top: 5px;
+    }
+    .item-price {
+      font-weight: bold;
+      margin-right: 15px;
+    }
+    .remove-btn {
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background: #cc0000;
+    }
+    #resumo {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: 20px auto;
+    }
+    .resumo-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+    }
+    .total {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .checkout-btn {
+      width: 100%;
+      padding: 12px;
+      background: #d4a373;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .checkout-btn:hover {
+      background: #b07d4f;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+    .social-icon {
+      font-size: 28px;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+    .social-icon:hover {
+      transform: scale(1.2);
+    }
+    .whatsapp { color: #25D366; }
+    .instagram { color: #E1306C; }
+    .tiktok { color: #ffffff; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <app-menu></app-menu>
+      <img src="assets/image/logo.jpeg" alt="Logo Luminous Essence" class="logo">
+      <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="carrinho-title">Meu Carrinho</h1>
+
+    <section id="carrinho-itens">
+      <div class="cart-item">
+        <img src="assets/image/vela2.jpeg" alt="Vela Aromática" class="item-img">
+        <div class="item-info">
+          <h3>Vela Aromática</h3>
+          <p>Fragrância Lavanda</p>
+          <input type="number" value="1" min="1" class="item-qty">
+        </div>
+        <div class="item-price">R$ 45,00</div>
+        <button class="remove-btn">Remover</button>
+      </div>
+
+      <div class="cart-item">
+        <img src="assets/image/sabonete2.jpeg" alt="Sabonete Natural" class="item-img">
+        <div class="item-info">
+          <h3>Sabonete Natural</h3>
+          <p>Óleo de Coco</p>
+          <input type="number" value="2" min="1" class="item-qty">
+        </div>
+        <div class="item-price">R$ 30,00</div>
+        <button class="remove-btn">Remover</button>
+      </div>
+    </section>
+
+    <section id="resumo">
+      <h2>Resumo do Pedido</h2>
+      <div class="resumo-item">
+        <span>Subtotal:</span>
+        <span>R$ 105,00</span>
+      </div>
+      <div class="resumo-item">
+        <span>Frete:</span>
+        <span>R$ 15,00</span>
+      </div>
+      <div class="resumo-item total">
+        <span>Total:</span>
+        <span>R$ 120,00</span>
+      </div>
+      <button class="checkout-btn">Finalizar Compra</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Luminous Essence - Todos os direitos reservados</p>
+    <a href="https://wa.me/5542999541198" target="_blank" class="social-icon whatsapp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/lumiinous.essence" target="_blank" class="social-icon instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@lumiinous.essence" target="_blank" class="social-icon tiktok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </footer>
+</body>
+</html>

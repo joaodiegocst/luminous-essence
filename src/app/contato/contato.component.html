@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luminous Essence - Contato</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdfcf9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #d4a373;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-icon {
+      font-size: 24px;
+      cursor: pointer;
+      color: #000000;
+      padding: 15px;
+    }
+    .menu-icon:hover, .cart-icon:hover {
+      color: #b07d4f;
+    }
+    .logo {
+      height: 60px;
+    }
+    section {
+      padding: 20px;
+      text-align: center;
+      flex: 1;
+    }
+    /* Estilo igual ao "Meu Carrinho" */
+    h2.contato-title {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #d4a373;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #b07d4f;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    .social-icon {
+      font-size: 28px;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+    .social-icon:hover {
+      transform: scale(1.2);
+    }
+    .whatsapp { color: #25D366; }
+    .instagram { color: #E1306C; }
+    .tiktok { color: #ffffff; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <app-menu></app-menu>
+      <img src="assets/image/logo.jpeg" alt="Logo Luminous Essence" class="logo">
+      <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+    </div>
+  </header>
+
+  <section id="contato">
+    <h2 class="contato-title">Fale Conosco</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu email" required>
+      <textarea rows="5" placeholder="Sua mensagem"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Luminous Essence - Todos os direitos reservados</p>
+    <a href="https://wa.me/5542999541198" target="_blank" class="social-icon whatsapp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/lumiinous.essence" target="_blank" class="social-icon instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@lumiinous.essence" target="_blank" class="social-icon tiktok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </footer>
+</body>
+</html>

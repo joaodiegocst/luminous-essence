@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarrosselComponent } from '../carrossel/carrossel.component';
 import { MenuComponent } from '../menu/menu.component';
 import { RouterOutlet } from '@angular/router';
-
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-carrinho',
+  selector: 'app-home',
   standalone: true, 
   imports: [CommonModule, MenuComponent],
-  templateUrl: './carrinho.component.html',
-  styleUrls: ['./carrinho.component.css']
+  templateUrl: './contato.component.html',
+  styleUrls: ['./contato.component.css']      // plural correto
 })
-export class CarrinhoComponent {}
+export class ContatoComponent {}
