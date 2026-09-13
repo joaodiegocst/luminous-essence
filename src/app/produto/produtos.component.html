@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luminous Essence - Loja Online</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdfcf9;
+      color: #333;
+    }
+    header {
+      background: #d4a373;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-icon {
+      font-size: 24px;
+      cursor: pointer;
+      color: #000000;
+      padding: 15px;
+    }
+    .logo {
+      height: 60px;
+    }
+    section {
+      padding: 20px;
+      text-align: center;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+    h2.produtos-title {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #d4a373;
+      margin: 10px 0;
+    }
+    button {
+      background: #d4a373;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #b07d4f;
+    }
+    footer {
+      background: #d4a373;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+    .social-icon {
+      font-size: 28px;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: transform 0.3s;
+      color: white;
+    }
+    .social-icon:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <app-menu></app-menu>
+      <img src="assets/image/logo.jpeg" alt="Logo Luminous Essence" class="logo">
+      <div class="cart-icon" routerLink="/carrinho" ><i class="fas fa-shopping-cart"></i></div>
+    </div>
+  </header>
+
+  <section id="produtos">
+    <h2 class="produtos-title">Produtos</h2>
+    <div class="produtos">
+      <div class="card">
+        <img src="assets/image/vela1.jpeg" alt="Vela Aromática 1">
+        <h3>Vela Aromática - Lavanda</h3>
+        <p>Feita com cera vegetal e essência relaxante.</p>
+        <p class="price">R$ 39,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="assets/image/vela2.jpeg" alt="Vela Aromática 2">
+        <h3>Vela Aromática - Baunilha</h3>
+        <p>Fragrância doce e acolhedora.</p>
+        <p class="price">R$ 42,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="assets/image/vela3.jpeg" alt="Vela Aromática 3">
+        <h3>Vela Aromática - Rosas</h3>
+        <p>Perfume floral sofisticado.</p>
+        <p class="price">R$ 44,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="assets/image/vela4.jpeg" alt="Vela Aromática 4">
+        <h3>Vela Aromática - Canela</h3>
+        <p>Notas quentes e envolventes.</p>
+        <p class="price">R$ 36,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="assets/image/vela5.jpeg" alt="Vela Aromática 5">
+        <h3>Vela Aromática - Jasmim</h3>
+        <p>Fragrância delicada e elegante.</p>
+        <p class="price">R$ 41,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="assets/image/vela6.jpeg" alt="Vela Aromática 6">
+        <h3>Vela Aromática - Citrus</h3>
+        <p>Refrescante e energizante.</p>
+        <p class="price">R$ 38,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="assets/image/difusor1.jpeg" alt="Difusor de Aromas">
+        <h3>Difusor de Aromas</h3>
+        <p>Perfuma o ambiente de forma contínua.</p>
+        <p class="price">R$ 59,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="assets/image/sabonete1.jpeg" alt="Sabonete Natural 1">
+        <h3>Sabonete Natural - Argila Verde</h3>
+        <p>Limpeza profunda e refrescante.</p>
+        <p class="price">R$ 19,90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="assets/image/sabonete2.jpeg" alt="Sabonete Natural 2">
+        <h3>Sabonete Natural - Aveia e Mel</h3>
+        <p>Hidratação suave e nutritiva.</p>
+        <p class="price">R$ 22,90</p>
+        <button>Comprar</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Luminous Essence - Todos os direitos reservados</p>
+    <a href="https://wa.me/5542999541198" target="_blank" class="social-icon">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/lumiinous.essence" target="_blank" class="social-icon">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@lumiinous.essence" target="_blank" class="social-icon">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </footer>
+</body>
+</html>

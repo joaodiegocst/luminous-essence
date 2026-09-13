@@ -8,6 +8,11 @@ export const routes: Routes = [
         import('./home/home.component').then(m => m.HomeComponent) // lazy load do componente standalone
     },
     {
+      path: 'produtos',
+      loadComponent: () =>
+        import('./produto/produtos.component').then(m => m.ProdutosComponent) // lazy load do componente standalone
+    },
+    {
       path: 'carrinho',
       loadComponent: () =>
         import('./carrinho/carrinho.component').then(m => m.CarrinhoComponent) // lazy load do componente standalone
