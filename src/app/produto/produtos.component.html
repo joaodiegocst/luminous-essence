@@ -15,7 +15,7 @@
     header {
       background: #d4a373;
       color: white;
-      padding: 20px;
+      padding: 12px;
       text-align: center;
       position: sticky;
       top: 0;
@@ -27,57 +27,73 @@
       align-items: center;
     }
     .cart-icon {
-      font-size: 24px;
+      font-size: 22px;
       cursor: pointer;
       color: #000000;
-      padding: 15px;
+      padding: 8px;
     }
     .logo {
-      height: 60px;
+      height: 50px;
     }
     section {
-      padding: 20px;
+      padding: 12px;
       text-align: center;
     }
     .produtos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 20px;
+      grid-template-columns: repeat(3, 1fr); /* padrão desktop */
+      gap: 12px;
+      margin-top: 12px;
     }
     h2.produtos-title {
       font-size: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
+      color: black;
     }
     .card {
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
       transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch; /* imagem ocupa toda largura */
+      padding: 0; /* remove padding interno */
     }
     .card:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
     .card img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      height: 200px; /* altura ajustada para proporção equilibrada */
+      object-fit: cover;
+      display: block;
+      margin: 0;
+    }
+    .card-content {
+      padding: 8px; /* espaço apenas para textos */
+      text-align: center;
+    }
+    .card h3 {
+      font-size: 14px;
+      margin: 4px 0;
     }
     .price {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: bold;
       color: #d4a373;
-      margin: 10px 0;
+      margin: 4px 0;
     }
     button {
       background: #d4a373;
       color: white;
       border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
+      padding: 6px 12px;
+      border-radius: 4px;
       cursor: pointer;
       transition: background 0.3s;
+      margin-top: 6px;
     }
     button:hover {
       background: #b07d4f;
@@ -86,12 +102,12 @@
       background: #d4a373;
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 30px;
+      padding: 10px;
+      margin-top: 20px;
     }
     .social-icon {
-      font-size: 28px;
-      margin: 0 10px;
+      font-size: 22px;
+      margin: 0 6px;
       text-decoration: none;
       transition: transform 0.3s;
       color: white;
@@ -99,6 +115,62 @@
     .social-icon:hover {
       transform: scale(1.2);
     }
+
+    /* Responsividade */
+    @media (max-width: 1024px) {
+      .produtos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .produtos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      .produtos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+
+      /* centraliza conteúdo */
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.show {
+      display: flex; /* mantém flex quando ativo */
+    }
+
+    .modal-content {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 8px;
+      animation: zoomIn 0.4s;
+      position: relative; /* referência para o botão fechar */
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    @keyframes zoomIn {
+      from {transform: scale(0.7);}
+      to {transform: scale(1);}
+    }
+
   </style>
 </head>
 <body>
@@ -106,78 +178,27 @@
     <div class="header-container">
       <app-menu></app-menu>
       <img src="assets/image/logo.jpeg" alt="Logo Luminous Essence" class="logo">
-      <div class="cart-icon" routerLink="/carrinho" ><i class="fas fa-shopping-cart"></i></div>
+      <div class="cart-icon" routerLink="/carrinho"><i class="fas fa-shopping-cart"></i></div>
     </div>
   </header>
 
   <section id="produtos">
     <h2 class="produtos-title">Produtos</h2>
     <div class="produtos">
-      <div class="card">
-        <img src="assets/image/vela1.jpeg" alt="Vela Aromática 1">
-        <h3>Vela Aromática - Lavanda</h3>
-        <p>Feita com cera vegetal e essência relaxante.</p>
-        <p class="price">R$ 39,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="card">
-        <img src="assets/image/vela2.jpeg" alt="Vela Aromática 2">
-        <h3>Vela Aromática - Baunilha</h3>
-        <p>Fragrância doce e acolhedora.</p>
-        <p class="price">R$ 42,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="card">
-        <img src="assets/image/vela3.jpeg" alt="Vela Aromática 3">
-        <h3>Vela Aromática - Rosas</h3>
-        <p>Perfume floral sofisticado.</p>
-        <p class="price">R$ 44,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="card">
-        <img src="assets/image/vela4.jpeg" alt="Vela Aromática 4">
-        <h3>Vela Aromática - Canela</h3>
-        <p>Notas quentes e envolventes.</p>
-        <p class="price">R$ 36,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="card">
-        <img src="assets/image/vela5.jpeg" alt="Vela Aromática 5">
-        <h3>Vela Aromática - Jasmim</h3>
-        <p>Fragrância delicada e elegante.</p>
-        <p class="price">R$ 41,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="card">
-        <img src="assets/image/vela6.jpeg" alt="Vela Aromática 6">
-        <h3>Vela Aromática - Citrus</h3>
-        <p>Refrescante e energizante.</p>
-        <p class="price">R$ 38,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="card">
-        <img src="assets/image/difusor1.jpeg" alt="Difusor de Aromas">
-        <h3>Difusor de Aromas</h3>
-        <p>Perfuma o ambiente de forma contínua.</p>
-        <p class="price">R$ 59,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="card">
-        <img src="assets/image/sabonete1.jpeg" alt="Sabonete Natural 1">
-        <h3>Sabonete Natural - Argila Verde</h3>
-        <p>Limpeza profunda e refrescante.</p>
-        <p class="price">R$ 19,90</p>
-        <button>Comprar</button>
-      </div>
-      <div class="card">
-        <img src="assets/image/sabonete2.jpeg" alt="Sabonete Natural 2">
-        <h3>Sabonete Natural - Aveia e Mel</h3>
-        <p>Hidratação suave e nutritiva.</p>
-        <p class="price">R$ 22,90</p>
+      <div class="card" *ngFor="let produto of produtos">
+        <img [src]="produto.imagem" [alt]="produto.nome" class="produto-img" (click)="abrirModal(produto.imagem)">
+        <h3>{{ produto.nome }}</h3>
+        <p class="price">{{ produto.preco }}</p>
         <button>Comprar</button>
       </div>
     </div>
   </section>
+
+  <!-- Modal -->
+  <div class="modal" [ngClass]="{'show': modalAberto}" (click)="fecharModal()">
+    <span class="close" (click)="fecharModal()">&times;</span>
+    <img class="modal-content" [src]="imagemSelecionada">
+  </div>
 
   <footer>
     <p>&copy; 2026 Luminous Essence - Todos os direitos reservados</p>
